@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Installing source NPM dependencies...
       - npm install
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin 786766101582.dkr.ecr.ap-southeast-2.amazonaws.com
   build:
     commands:
       - echo Build started on `date`
